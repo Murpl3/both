@@ -1,0 +1,42 @@
+{
+  "cli": {
+    "version": ">= 5.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
+      },
+      "env": {
+        "EXPO_NO_CAPABILITY_SYNC": "1",
+        "EXPO_PUBLIC_API_URL": "https://considerate-overappreciatively-melodee.ngrok-free.dev",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://vsevigwdjpdgqwsogenv.supabase.co"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://considerate-overappreciatively-melodee.ngrok-free.dev",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://vsevigwdjpdgqwsogenv.supabase.co"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
